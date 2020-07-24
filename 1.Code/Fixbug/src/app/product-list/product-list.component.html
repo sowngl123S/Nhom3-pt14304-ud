@@ -1,0 +1,69 @@
+<style>
+  #customers {
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+ }
+
+ #customers td, #customers th {
+     border: 1px solid #ddd;
+     padding: 8px;
+ }
+
+ #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+ #customers tr:hover {background-color: #ddd;}
+
+ #customers th {
+     padding-top: 12px;
+     padding-bottom: 12px;
+     text-align: left;
+     background-color: rgb(54, 180, 214);
+     color: white;
+ }
+</style>
+
+<h2 style="text-align: center; "> Products List</h2>
+<div style="padding-top: 20px;">
+ <div class="btn btn-success" (click)="click()">{{btnName}}
+ </div>
+ <div class="alert alert-primary my-2" role="alert" *ngIf="isDisplay">
+<strong >NamNDPH08656</strong>
+ </div>
+  <button class="btn btn-primary" routerLink="/admin/add" >Add Product</button>
+</div>
+<div class="form-group" >
+     
+    <input type="text"  class="form-control" [(ngModel)]="keyword" name="keyword">
+    <button class="btn btn-success" (click)="Search()">Search</button>
+ 
+</div>
+<table id = "customers">
+<tr >
+ <th scope="col">Id</th>
+ <th scope="col" >Img</th>
+ <th scope="col">Name</th>
+ <th scope="col">Price</th>
+ <th scope="col">Desc</th>
+ <th>Status</th>
+<th >Update</th>
+<th >Delete</th>
+</tr>
+<tr *ngFor="let product of products">
+<td >{{product.id}}</td>
+<td ><a href="#"><img style="width: 250px; height: 270px;" class="card-img-top" src="{{product.img}}"  alt=""></a>
+</td>
+<td >{{product.name}}</td>
+<td >{{product.price}}</td>
+<td >{{product.desc}}</td>
+<td >{{product.status? 'In stock': 'Out stock'}}</td>
+
+<td ><button  class="btn btn-primary" routerLink="/admin/edit/{{product.id}}">Update</button>
+<td ><button  class="btn btn-primary" routerLink="/admin/delete/{{product.id}}">Delete</button>
+
+
+</tr>
+</table>  
+
+
+

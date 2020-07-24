@@ -1,0 +1,23 @@
+
+      <div style="text-align: center" class="inner_breadcrumb   ml-4">
+        <ul class="short_ls">
+          <li>
+            <a routerLink="/admin" routerLinkActive="active">Home</a>
+            <span>/ /</span>
+          </li>
+          <li>Delete Product</li>
+        </ul>
+      </div>
+<form class="w-50 mx-auto mt-3" *ngIf="product" >
+    <div class="form-group">
+      <h1 style="text-align: center;padding-top: 80px;"> Bạn có muốn Xóa Sản Phẩm</h1>
+      <label for=""></label>
+      <a href="#"><img style="width: 250px; height: 270px;" class="card-img-top" src="{{product.img}}"  alt=""></a>
+      <input type="text" name="name" class="form-control"placeholder="Product Name" [(ngModel)]="product.name">
+      <input type="text" name="price" class="form-control"placeholder="Price" [(ngModel)]="product.price">
+      <input type="text" name="desc" class="form-control"placeholder="Desc" [(ngModel)]="product.desc">
+      <input type="text" name="status" class="form-control"placeholder="Status" [(ngModel)]="product.status">
+
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="removeProduct()">Xóa</button>
+  </form>

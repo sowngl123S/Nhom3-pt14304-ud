@@ -1,0 +1,60 @@
+
+
+<form class="w-50 mx-auto mt-3" [formGroup]="form">
+  <h2 style="text-align: center;padding-top: 50px;"> Add Product</h2>
+    <div class="form-group" style="padding-top: 100px;">
+      <label for="img">Img</label>
+      <input type="text" name="img" class="form-control" formControlName="img" [ngClass]="{'is-invalid': form.get('img').touched && form.get('img').invalid}" placeholder="Product img" [(ngModel)]="product.img"><br>
+     <div class="invalid-feedback">
+       <div> Img is required</div>
+     </div>
+    </div>
+    <div class="form-group" >
+      <label for="name">Name</label>
+      <input type="text" name="name" class="form-control" formControlName="name" [ngClass]="{'is-invalid': form.get('name').touched && form.get('name').invalid}" placeholder="Product name" [(ngModel)]="product.name"><br>
+     <div class="invalid-feedback">
+       <div> Name is required</div>
+     </div>
+    </div>
+    <div class="form-group" >
+      <label for="name">Price</label>
+      <input type="text" name="price" class="form-control" formControlName="price" [ngClass]="{'is-invalid': form.get('price').touched && form.get('price').invalid}" placeholder="Product price" [(ngModel)]="product.price"><br>
+     <div class="invalid-feedback">
+       <div> Price is required</div>
+     </div>
+    </div>
+    <div class="form-group" >
+      <label for="name">Desc</label>
+      <input type="text" name="desc" class="form-control" formControlName="desc" [ngClass]="{'is-invalid': form.get('desc').touched && form.get('desc').invalid}" placeholder="Product desc" [(ngModel)]="product.desc"><br>
+     <div class="invalid-feedback">
+       <div> Desc is required</div>
+     </div>
+    </div>
+  
+    <div class="form-group">
+      <button style="text-align: center;"  class="btn btn-primary" [disabled]="!form.valid" (click)="addProduct()"> Register</button>
+  
+    </div>
+  
+  </form>
+
+      <!-- <div style="text-align: center" class="inner_breadcrumb   ml-4">
+        <ul class="short_ls">
+          <li>
+            <a routerLink="/admin" routerLinkActive="active">Home</a>
+            <span>/ /</span>
+          </li>
+          <li>Add Product</li>
+        </ul>
+      </div>
+<form class="w-50 mx-auto mt-3">
+<h2 style="text-align: center;"> Add Product</h2>
+  <div class="form-group" style="padding-top: 100px;">
+    <input type="text" name="name" class="form-control"placeholder="Product img" [(ngModel)]="product.img"><br>
+    <input type="text" name="name" class="form-control"placeholder="Product Name" [(ngModel)]="product.name"><br>
+    <input type="text" name="price" class="form-control"placeholder="Price" [(ngModel)]="product.price"><br>
+    <input type="text" name="price" class="form-control"placeholder="Discription" [(ngModel)]="product.desc"><br>
+  </div>
+  <button style="text-align: center;" type="submit" class="btn btn-primary" (click)="addProduct()">Submit</button>
+
+</form> -->
