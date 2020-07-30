@@ -1,0 +1,61 @@
+
+ 
+ 
+      <div style="text-align: center" class="inner_breadcrumb   ml-4">
+        <ul class="short_ls">
+          <li>
+            <a routerLink="/admin" routerLinkActive="active">Home</a>
+            <span>/ /</span>
+          </li>
+          <li>Edit Product</li>
+        </ul>
+      </div>
+   
+<form class="w-50 mx-auto mt-3" [formGroup]="form">
+  <h2 style="text-align: center;padding-top: 50px;"> Update Product</h2>
+    <div class="form-group" style="padding-top: 100px;">
+      <label for="img">Img</label>
+      <input  type="text" name="img" class="form-control" formControlName="img" [ngClass]="{'is-invalid': form.get('img').touched && form.get('img').invalid}" placeholder="Product img" [(ngModel)]="product.img"><br>
+     <div class="invalid-feedback">
+       <div> Img is required</div>
+     </div>
+    </div>
+    <div class="form-group" >
+      <label for="name">Name</label>
+      <input  type="text" name="name" class="form-control" formControlName="name" [ngClass]="{'is-invalid': form.get('name').touched && form.get('name').invalid}" placeholder="Product name" [(ngModel)]="product.name"><br>
+     <div class="invalid-feedback">
+       <div> Name is required</div>
+     </div>
+    </div>
+    <div class="form-group" >
+      <label for="name">Price</label>
+      <input type="text" name="price" class="form-control" formControlName="price" [ngClass]="{'is-invalid': form.get('price').touched && form.get('price').invalid}" placeholder="Product price" [(ngModel)]="product.price"><br>
+     <div class="invalid-feedback">
+       <div> Price is required</div>
+     </div>
+    </div>
+    <div class="form-group" >
+      <label for="name">Desc</label>
+      <input type="text" name="desc" class="form-control" formControlName="desc" [ngClass]="{'is-invalid': form.get('desc').touched && form.get('desc').invalid}" placeholder="Product desc" [(ngModel)]="product.desc"><br>
+     <div class="invalid-feedback">
+       <div> Desc is required</div>
+     </div>
+    </div>
+  
+    <div class="form-group">
+      <button style="text-align: center;"  class="btn btn-primary" [disabled]="!form.valid" (click)="updateProduct()"> Register</button>
+  
+    </div>
+  
+  </form>
+<!-- <h2>Edit Product</h2>
+<form class="w-50 mx-auto mt-3" *ngIf="product" >
+  <div class="form-group">
+      <input type="text" name="img" class="form-control"placeholder="Product img" [(ngModel)]="product.img">
+   <input type="text" name="name" class="form-control"placeholder="Product Name" [(ngModel)]="product.name">
+      <input type="text" name="price" class="form-control"placeholder="Price" [(ngModel)]="product.price">
+      <input type="text" name="desc" class="form-control"placeholder="Desc" [(ngModel)]="product.desc">
+      <input type="text" name="status" class="form-control"placeholder="Status" [(ngModel)]="product.status">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="updateProduct()">Submit</button>
+</form> -->

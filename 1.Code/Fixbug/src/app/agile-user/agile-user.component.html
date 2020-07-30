@@ -1,0 +1,119 @@
+<style>
+    #customers {
+       font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+       border-collapse: collapse;
+       width: 100%;
+   }
+  
+   #customers td, #customers th {
+       border: 1px solid #ddd;
+       padding: 8px;
+   }
+  
+   #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+   #customers tr:hover {background-color: #ddd;}
+  
+   #customers th {
+       padding-top: 12px;
+       padding-bottom: 12px;
+       text-align: left;
+       background-color: rgb(54, 180, 214);
+       color: white;
+   }
+  </style>
+  
+  <h2 style="text-align: center; "> User List</h2>
+  <div style="padding-top: 20px;">
+  
+   
+    <button class="btn btn-primary" routerLink="/admin/add" >Add Product</button>
+  </div>
+  <div class="form-group" >
+       
+    <input type="text"  class="form-control" [(ngModel)]="keyword" name="keyword">
+      <button class="btn btn-success" (click)="Search()">Search</button>
+   
+  </div>
+  <table id = "customers">
+  <tr >
+   <th scope="col">Id</th>
+   <th scope="col" >Username</th>
+   <th scope="col">Name</th>
+   <th scope="col">Email</th>
+   <th scope="col">Date</th>
+  <th >Update</th>
+  <th >Delete</th>
+  </tr>
+  <tr *ngFor="let agile of agiles">
+  <td >{{agile.id}}</td>
+  <td >{{agile.username}}</td>
+  <td >{{agile.name}}</td>
+  <td >{{agile.email}}</td>
+  <td >{{agile.date}}</td> 
+  
+  <td ><button  class="btn btn-primary" >Update</button>
+  <td ><button  class="btn btn-primary" >Delete</button>
+  
+  
+  </tr>
+  </table>  
+  
+  
+  
+  
+
+<!--     
+ <br/>
+ <br/>
+ <br/>
+ 
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title ">Simple Table</h4>
+              <p class="card-category"> Here is a subtitle for this table</p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th scope="col">Id</th>
+   <th scope="col" >Username</th>
+   <th scope="col">Name</th>
+   <th scope="col">Email</th>
+   <th scope="col">Date</th>
+  <th >Update</th>
+  <th >Delete</th>
+
+                  </thead>
+
+
+                  <tbody>
+                    <tr *ngFor="let agile of agiles">
+                        <td >{{agile.id}}</td>
+                        <td >{{agile.username}}</td>
+                        <td >{{agile.name}}</td>
+                        <td >{{agile.email}}</td>
+                        <td >{{agile.date}}</td> 
+                        
+                        <td ><button  class="btn btn-primary" >Update</button>
+                        <td ><button  class="btn btn-primary" >Delete</button>
+                    </tr>
+                   
+                   
+                  </tbody>
+                 
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+  </div> -->
+

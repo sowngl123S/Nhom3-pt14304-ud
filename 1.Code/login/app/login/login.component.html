@@ -1,0 +1,29 @@
+
+
+<body>
+    <div class="loginbox">
+        <h1>Đăng Nhập</h1>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email"></label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Tên đăng nhập"
+                    formControlName="email">
+            </div>
+            <div class="form-group">
+                <label for="password"></label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu"
+                    formControlName="password">
+            </div>
+            <br>
+            <br>
+            <button style="margin-right: 30px;" type="submit"  class="btn btn-primary">Đăng nhập</button>
+            <button>Thoát</button> <br>
+            <br>
+            <br>
+            <a href="#">Quên mật khẩu?</a>
+            <a href="#" style="margin-left: 70px;">Tạo tài khoản</a>
+        </form>
+
+    </div>
+
+</body>
